@@ -44,4 +44,22 @@ userSchema.statics.getUserById = async function (id) {
     throw error;
   }
 }
+
+userSchema.statics.getUsers = async function () {
+  try {
+    const users = await this.find();
+    return users;
+  } catch (error) {
+    throw error;
+  }
+}
+
+userSchema.statics.deleteByUserById = async function (id) {
+  try {
+    const result = await this.remove({ _id: id });
+    return result;
+  } catch (error) {
+    throw error;
+  }
+}
 export default mongoose.model("User", userSchema);
