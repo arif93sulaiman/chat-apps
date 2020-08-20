@@ -2,11 +2,14 @@ import http from "http";
 import express from "express";
 import logger from "morgan";
 import cors from "cors";
+//mongo connection
+import "../config/mongo.mjs";
 // routes
 import indexRouter from "../routes/index.mjs";
 import userRouter from "../routes/user.mjs";
 import chatRoomRouter from "../routes/chatRoom.mjs";
 import deleteRouter from "../routes/delete.mjs";
+
 // middlewares
 import { decode } from '../middlewares/jwt.mjs'
 
