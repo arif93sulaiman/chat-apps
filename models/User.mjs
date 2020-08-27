@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.statics.createUser = async function (
-	firstName, 
+	    firstName, 
     	lastName, 
     	type
 ) {
@@ -62,4 +62,5 @@ userSchema.statics.deleteByUserById = async function (id) {
     throw error;
   }
 }
+
 export default mongoose.model("User", userSchema);
